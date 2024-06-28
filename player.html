@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        i{
+            color: #fff;
+        }
+        input,button{
+            cursor: pointer;
+            border: 0;
+            outline: none;
+            background: none;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        #file{
+            cursor: pointer;
+            margin: 100px auto 0;
+            text-align: center;
+        }
+        #player{
+            width:100%;
+             height:100%;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        #controlers{
+            display: flex;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+        }
+        .controls{
+            transition: all .7s;
+            color: #fff;
+            margin: 0 20px;
+
+            .playpause{
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+        }
+        .ms-auto{
+            margin-left: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="file">
+        <video id="player"  type="video/mp4">
+        </video>
+        <div id="controlers">
+            <div class="controls">
+                <button class="playpause">
+                    <i class="fa-solid"></i>
+                </button>
+            </div>
+            <div class="controls">
+                <p class="time"></p>
+            </div>
+            <div class="controls ms-auto">
+                <button class="expand">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/25666bc643.js" crossorigin="anonymous"></script>
+</body>
+</html>
